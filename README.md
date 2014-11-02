@@ -1,5 +1,5 @@
 
-A Auth. Provider registration handler that implements the following:
+An Auth. Provider registration handler that implements the following:
 
 First time login into salesforce:
 - Create a new 'Standard User' user
