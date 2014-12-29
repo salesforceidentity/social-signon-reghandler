@@ -63,7 +63,7 @@ global class SocialRegHandler implements Auth.RegistrationHandler{
         u.lastName = lastName;
         u.firstName = firstName;
         u.alias = alias;
-        u.languagelocalekey = UserInfo.getLocale();
+        u.languagelocalekey = UserInfo.getLanguage();
         u.localesidkey = UserInfo.getLocale();
         u.emailEncodingKey = 'UTF-8';
         u.timeZoneSidKey = 'America/Los_Angeles';
