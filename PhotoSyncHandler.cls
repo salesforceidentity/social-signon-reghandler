@@ -17,7 +17,6 @@ global class PhotoSyncHandler {
     
     @Future(callout=true)
     public static void syncPhoto(String userId, String communityId, String url){
-        System.debug('userId: ' + userid + ' communityId: ' + communityId + ' url: ' + url);
         
         Http h = new Http();
         HttpRequest req = new HttpRequest();
@@ -30,8 +29,9 @@ global class PhotoSyncHandler {
         }
         if( (res.getStatusCode() >= 200) && (res.getStatusCode() < 300) )  {
             ConnectApi.BinaryInput photo = new ConnectApi.BinaryInput(res.getBodyAsBlob(), 'image/jpg', 'userphoto.jpg');
-            ConnectApi.UserProfiles.setPhoto(communityId, userId, photo);
+            ConnectApi.ChatterUsers.setPhoto(communityId, userId, photo);
         }
+		
     }
 
 }
